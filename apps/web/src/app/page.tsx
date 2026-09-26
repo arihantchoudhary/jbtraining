@@ -3,7 +3,6 @@ import { Hero } from "@/components/site/hero";
 import { About } from "@/components/site/about";
 import { GroupTraining } from "@/components/site/group-training";
 import { Gallery } from "@/components/site/gallery";
-import { TrainingVideo } from "@/components/site/training-video";
 import { HowItWorks } from "@/components/site/how-it-works";
 import { Testimonials } from "@/components/site/testimonials";
 import { InstagramFollow } from "@/components/site/instagram";
@@ -21,7 +20,6 @@ export default function Home() {
         <InstagramFollow />
         <About />
         <GroupTraining />
-        <TrainingVideo />
         <HowItWorks />
         <Testimonials />
         <Faq />

@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { HeroShowcase } from "@/components/site/hero-showcase";
 import { PHONE_TEL_HREF } from "@/lib/site-content";
 
 export function Hero() {
@@ -32,14 +32,7 @@ export function Hero() {
           <li>✓ No commitment</li>
           <li>✓ NCSF Certified Trainer</li>
         </ul>
-        <Image
-          src="/images/hero-group.webp"
-          alt="Jamal Baqleh training group session"
-          width={1200}
-          height={800}
-          className="animate-in fade-in zoom-in-95 fill-mode-both mt-10 w-full max-w-3xl rounded-xl object-cover ring-1 ring-white/10 delay-500 duration-700"
-          priority
-        />
+        <HeroShowcase />
       </div>
     </section>
   );
