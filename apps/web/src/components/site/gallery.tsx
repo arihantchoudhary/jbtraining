@@ -67,6 +67,7 @@ export function Gallery() {
                   height={img.height}
                   className="w-full object-cover transition-transform duration-700 ease-[var(--ease-out-expressive)] group-hover:scale-110"
                   sizes="(min-width: 640px) 50vw, 100vw"
+                  priority={i === 0}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/0 to-black/0 transition-opacity duration-300 sm:opacity-0 sm:group-hover:opacity-100" />
                 <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5 transition-all duration-300 sm:translate-y-3 sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100">
