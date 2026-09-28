@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Reveal } from "@/components/site/reveal";
 import { testimonials } from "@/lib/site-content";
@@ -31,6 +31,9 @@ export function Testimonials() {
                 </CardContent>
                 <CardFooter className="items-center gap-3">
                   <Avatar size="lg">
+                    {"photo" in t && (
+                      <AvatarImage src={t.photo} alt={t.name} />
+                    )}
                     <AvatarFallback>{initials(t.name)}</AvatarFallback>
                   </Avatar>
                   <div>

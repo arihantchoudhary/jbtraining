@@ -12,24 +12,28 @@ export const testimonials = [
       "When I think of the pivotal figures in my athletic journey at San José State Men's Soccer, Jamal immediately comes to mind. As my strength and conditioning trainer, he brought a unique blend of technical knowledge, motivational prowess, and an instinctive understanding of an athlete's needs.",
     name: "#14 Angel Iniguez",
     affiliation: "San José State Men's Soccer",
+    photo: "/images/testimonials/angel-iniguez.jpg",
   },
   {
     quote:
       "Jamal's influence on my strength, conditioning and basketball journey has been nothing short of transformative. His expertise goes beyond the gym; he understands the heart and soul of an athlete. Under his guidance, I've not only grown stronger but also more confident. His tailored workouts, coupled with genuine encouragement, have made me feel both empowered and prepared on the court. Thank you, Jamal, for helping me reach my true potential!",
     name: "Elle Ladine",
     affiliation: "Washington Huskies Basketball",
+    photo: "/images/testimonials/elle-ladine.jpg",
   },
   {
     quote:
       "When I think of the pivotal figures in my athletic journey at San José State Men's Soccer, Jamal immediately comes to mind. As my strength and conditioning trainer, he brought a unique blend of technical knowledge, motivational prowess, and an instinctive understanding of an athlete's needs.",
     name: "Justin Gutang",
     affiliation: "Changwon LG Sakers",
+    photo: "/images/testimonials/justin-gutang.jpg",
   },
   {
     quote:
       "I've been training with Coach Jamal for a while now, and I can't express how awesome he is. He makes basketball so much fun, and I've learned a ton. He is super patient and always encourages me to do my best. He's helped me improve my dribbling, shooting, and defense, and I've become a better player because of him. I look forward to our training sessions every week. If you want to get better at basketball and have a blast doing it, JB Training is the way to go!",
     name: "Raymond Whitley",
     affiliation: "St. Ignatius Basketball",
+    photo: "/images/testimonials/raymond-whitley.jpg",
   },
 ] as const;
 
