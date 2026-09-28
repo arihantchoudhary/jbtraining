@@ -3,10 +3,11 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { postJson } from "@/lib/api";
+import { ApiError, postJson } from "@/lib/api";
 
 export function Newsletter() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -17,7 +18,14 @@ export function Newsletter() {
       await postJson("/newsletter", { email: form.get("email") });
       setStatus("sent");
       formEl.reset();
-    } catch {
+    } catch (err) {
+      if (err instanceof ApiError && err.status === 409) {
+        setStatus("sent");
+        setErrorMessage(null);
+        formEl.reset();
+        return;
+      }
+      setErrorMessage("Something went wrong. Please try again.");
       setStatus("error");
     }
   }
@@ -41,10 +49,8 @@ export function Newsletter() {
             </Button>
           </form>
         )}
-        {status === "error" && (
-          <p className="mt-3 text-sm text-destructive">
-            Something went wrong. Please try again.
-          </p>
+        {status === "error" && errorMessage && (
+          <p className="mt-3 text-sm text-destructive">{errorMessage}</p>
         )}
       </div>
     </section>

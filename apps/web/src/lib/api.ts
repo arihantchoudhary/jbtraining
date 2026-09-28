@@ -1,5 +1,14 @@
 export const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 
+export class ApiError extends Error {
+  status: number;
+
+  constructor(status: number, message: string) {
+    super(message);
+    this.status = status;
+  }
+}
+
 export async function postJson(path: string, body: unknown) {
   const res = await fetch(`${API_URL}${path}`, {
     method: "POST",
@@ -8,7 +17,7 @@ export async function postJson(path: string, body: unknown) {
   });
   if (!res.ok) {
     const detail = await res.json().catch(() => null);
-    throw new Error(detail?.detail ?? `Request failed (${res.status})`);
+    throw new ApiError(res.status, detail?.detail ?? `Request failed (${res.status})`);
   }
   return res.json();
 }
