@@ -14,12 +14,12 @@ export function Hero() {
             Strength &amp; Conditioning<span className="hidden sm:inline"> &middot; San Francisco</span>
           </span>
           <h1 data-split="load" className="font-display text-6xl leading-[0.9] tracking-tight text-white uppercase sm:text-8xl lg:text-9xl">
-            Stop getting <span className="whitespace-nowrap text-primary">left behind.</span>
+            Don&rsquo;t lose <span className="whitespace-nowrap text-primary">the game.</span>
           </h1>
           <p className="animate-in fade-in slide-in-from-bottom-4 fill-mode-both max-w-2xl text-lg font-medium text-white/80 delay-200 duration-700 sm:text-xl">
-            Tired of getting winded, outpaced, or sidelined by aches that
-            won&rsquo;t quit? Jamal gets you back in the game &mdash; real
-            strength, speed and conditioning, coached one-on-one or in a group.
+            Gassed in the fourth quarter, beat to the ball, or sidelined by
+            aches that won&rsquo;t quit? Jamal builds the strength, speed and
+            conditioning that keeps you in it, one-on-one or in a group.
           </p>
           <div className="animate-in fade-in slide-in-from-bottom-4 fill-mode-both mt-2 flex flex-col items-center gap-3 delay-300 duration-700">
             <Button
