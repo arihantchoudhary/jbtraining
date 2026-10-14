@@ -52,7 +52,6 @@ export function InstagramFollow() {
           </div>
         </div>
         <Button
-          size="sm"
           nativeButton={false}
           render={
             <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
