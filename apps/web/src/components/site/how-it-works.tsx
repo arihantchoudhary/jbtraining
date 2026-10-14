@@ -1,6 +1,7 @@
-import { BookingForm } from "@/components/site/booking-form";
+import { PhoneCall } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/reveal";
-import { howItWorks } from "@/lib/site-content";
+import { howItWorks, PHONE_NUMBER, PHONE_TEL_HREF } from "@/lib/site-content";
 
 export function HowItWorks() {
   return (
@@ -8,7 +9,7 @@ export function HowItWorks() {
       <div className="mx-auto max-w-3xl px-6 py-20 text-center">
         <Reveal>
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-            To get a free session by following these 3 steps
+            Get your free session in 3 steps
           </h2>
         </Reveal>
         <ol className="mt-12 grid gap-8 sm:grid-cols-3">
@@ -22,7 +23,16 @@ export function HowItWorks() {
           ))}
         </ol>
         <Reveal delay={200} className="mt-12">
-          <BookingForm />
+          <Button
+            size="lg"
+            nativeButton={false}
+            render={
+              <a href={PHONE_TEL_HREF}>
+                <PhoneCall className="size-4" />
+                Call {PHONE_NUMBER}
+              </a>
+            }
+          />
         </Reveal>
       </div>
     </section>

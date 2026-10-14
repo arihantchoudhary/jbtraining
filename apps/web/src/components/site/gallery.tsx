@@ -36,9 +36,9 @@ export function Gallery() {
 
   return (
     <section className="bg-zinc-50 dark:bg-zinc-950">
-      <div className="mx-auto max-w-6xl px-6 py-20">
+      <div className="mx-auto max-w-6xl px-6 py-16">
         <Reveal>
-          <h2 className="text-center text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className="text-center text-2xl font-bold tracking-tight sm:text-3xl">
             Inside JB Training
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">
@@ -47,37 +47,27 @@ export function Gallery() {
           </p>
         </Reveal>
 
-        <div className="mt-12 columns-1 gap-6 sm:columns-2">
+        <div className="mt-10 grid grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-3 lg:grid-cols-6">
           {galleryImages.map((img, i) => (
-            <Reveal
+            <button
               key={img.src}
-              delay={(i % 2) * 100}
-              className="mb-6 break-inside-avoid"
+              type="button"
+              onClick={() => setOpenIndex(i)}
+              className="group relative aspect-square overflow-hidden rounded-lg ring-1 ring-foreground/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+              aria-label={`Open image: ${img.story}`}
             >
-              <button
-                type="button"
-                onClick={() => setOpenIndex(i)}
-                className="group relative block w-full overflow-hidden rounded-2xl ring-1 ring-foreground/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-                aria-label={`Open image: ${img.story}`}
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  width={img.width}
-                  height={img.height}
-                  className="w-full object-cover transition-transform duration-700 ease-[var(--ease-out-expressive)] group-hover:scale-110"
-                  sizes="(min-width: 640px) 50vw, 100vw"
-                  priority={i === 0}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/0 to-black/0 transition-opacity duration-300 sm:opacity-0 sm:group-hover:opacity-100" />
-                <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5 transition-all duration-300 sm:translate-y-3 sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100">
-                  <p className="text-sm font-medium text-white sm:text-base">
-                    {img.story}
-                  </p>
-                  <Maximize2 className="size-5 shrink-0 text-white/80" />
-                </div>
-              </button>
-            </Reveal>
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                className="object-cover transition-transform duration-700 ease-[var(--ease-out-expressive)] group-hover:scale-110"
+                sizes="(min-width: 1024px) 16vw, (min-width: 640px) 25vw, 33vw"
+                priority={i < 3}
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors duration-300 group-hover:bg-black/40">
+                <Maximize2 className="size-5 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              </div>
+            </button>
           ))}
         </div>
       </div>

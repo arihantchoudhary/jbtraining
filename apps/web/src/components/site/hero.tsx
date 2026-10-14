@@ -21,11 +21,8 @@ export function Hero() {
           <Button
             size="lg"
             nativeButton={false}
-            render={<a href={PHONE_TEL_HREF}>Call to Book Your First Session</a>}
+            render={<a href={PHONE_TEL_HREF}>Call to Book Your Free Session</a>}
           />
-          <a href="#free-session" className="text-sm text-white/50 underline-offset-4 hover:text-white/80 hover:underline">
-            or book your free session online
-          </a>
         </div>
         <ul className="animate-in fade-in fill-mode-both flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-white/60 delay-400 duration-700">
           <li>✓ First session free</li>

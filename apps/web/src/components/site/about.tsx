@@ -7,7 +7,7 @@ export function About() {
       <div className="grid items-center gap-10 sm:grid-cols-2">
         <Reveal>
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-            Transform your fitness journey with a FREE session with Jamal
+            Transform your fitness journey with a free session with Jamal
             Baqleh!
           </h2>
           <p className="mt-6 text-muted-foreground">

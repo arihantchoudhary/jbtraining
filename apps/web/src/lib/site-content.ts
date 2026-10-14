@@ -43,28 +43,12 @@ export const faqs = [
     a: "Please bring comfortable clothing and shoes that you can move around in easily, as well as a water bottle and towel. You may also want to bring a change of clothes if you plan on showering after your workout.",
   },
   {
-    q: "Do I need to be a member to sign up for a free trial session?",
-    a: "No, you do not need to be a member to sign up for a free trial session. However, space is limited, so be sure to sign up in advance.",
-  },
-  {
-    q: "What kinds of equipment and classes do you offer?",
-    a: "We offer a wide variety of state-of-the-art equipment and group fitness classes. Our equipment includes cardio machines, weight machines, free weights, and functional training equipment.",
+    q: "Is the first session really free?",
+    a: "Yes. Your first session with Jamal is free, with no commitment. It's a chance to understand your needs and set clear goals for the sessions that follow. Space is limited, so call ahead to book.",
   },
   {
     q: "Do you offer personal training services?",
-    a: "Yes, we offer personal training services to help you reach your individual fitness goals. Our personal trainers can create a customized workout plan for you, teach you how to use the equipment safely and effectively, and motivate you to stay on track.",
-  },
-  {
-    q: "What are your membership rates?",
-    a: "We offer a variety of membership rates to fit your budget and needs. Please visit our website for more information on our membership rates and pricing options.",
-  },
-  {
-    q: "How do I cancel my membership?",
-    a: "To cancel your membership, simply visit the front desk or contact us by phone or email. We require a 30-day notice to cancel all memberships.",
-  },
-  {
-    q: "Do you have any special offers for new members?",
-    a: "Yes, we offer a variety of special offers for new members, such as discounted membership rates and free personal training sessions. Please visit our website for more information on our current new member offers.",
+    a: "Yes. Jamal offers one-on-one personal training to help you reach your individual fitness goals. He'll create a customized workout plan for you, teach you how to use the equipment safely and effectively, and keep you motivated to stay on track.",
   },
 ] as const;
 
@@ -76,7 +60,7 @@ export const bio = [
 ] as const;
 
 export const howItWorks = [
-  'Click on the "Free Session" button.',
-  "Select a time and date for your session and enter your contact information.",
-  'Click "Submit" to book your session.',
+  `Call or text Jamal at ${PHONE_NUMBER}.`,
+  "Pick a time and place that works for you.",
+  "Show up and train. Your first session is free.",
 ] as const;

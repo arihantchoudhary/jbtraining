@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/reveal";
-import { faqs } from "@/lib/site-content";
+import { faqs, PHONE_TEL_HREF } from "@/lib/site-content";
 
 export function Faq() {
   return (
@@ -42,7 +42,7 @@ export function FaqClosingCta() {
           size="lg"
           className="mt-6"
           nativeButton={false}
-          render={<a href="#free-session">Sign up for your FREE session</a>}
+          render={<a href={PHONE_TEL_HREF}>Call to Book Your Free Session</a>}
         />
       </Reveal>
     </section>

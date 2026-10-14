@@ -9,7 +9,7 @@ export function MobileCallBar() {
         className="flex h-16 items-center justify-center gap-2 text-sm font-semibold active:scale-[0.98]"
       >
         <PhoneCall className="size-4 motion-safe:animate-pulse" />
-        Call to Book Your First Session &middot; {PHONE_NUMBER}
+        Call to Book Your Free Session &middot; {PHONE_NUMBER}
       </a>
     </div>
   );
