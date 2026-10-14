@@ -24,7 +24,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "JB Training",
   description:
-    "Don't lose the game. Strength, speed and conditioning coaching with Jamal Baqleh, NCSF Certified Personal Trainer. First session free.",
+    "Stop getting left behind. Strength, speed and conditioning coaching with Jamal Baqleh, NCSF Certified Personal Trainer. First session free.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
