@@ -28,12 +28,12 @@ export function Testimonials() {
                       &ldquo;
                     </span>
                   </div>
-                  <blockquote className="mt-6 flex-1 text-base leading-relaxed text-foreground/80 sm:text-lg">
+                  <blockquote className="mt-6 flex-1 text-lg leading-relaxed text-foreground/80">
                     {t.quote}
                   </blockquote>
                   <figcaption className="mt-6 border-t border-foreground/10 pt-4">
-                    <p className="font-semibold tracking-wide uppercase">{t.name}</p>
-                    <p className="text-sm text-muted-foreground">{t.affiliation}</p>
+                    <p className="text-lg font-semibold tracking-wide uppercase">{t.name}</p>
+                    <p className="text-base text-muted-foreground">{t.affiliation}</p>
                   </figcaption>
                 </figure>
               </Reveal>

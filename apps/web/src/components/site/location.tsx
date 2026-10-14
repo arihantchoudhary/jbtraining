@@ -23,14 +23,14 @@ export function Location() {
             className="block h-72 w-full border-0 grayscale-[0.6] transition-[filter] duration-500 hover:grayscale-0 sm:h-[480px]"
           />
           <div className="sm:pointer-events-none sm:absolute sm:inset-0 sm:flex sm:items-center sm:justify-end sm:p-10">
-            <div className="p-6 sm:pointer-events-auto sm:w-full sm:max-w-sm sm:rounded-2xl sm:bg-background/95 sm:shadow-xl sm:ring-1 sm:ring-foreground/10 sm:backdrop-blur">
-              <h2 data-split="scroll" className="font-display text-3xl leading-[0.95] tracking-tight uppercase">Where to find us</h2>
-              <address className="mt-2 text-muted-foreground not-italic">
+            <div className="p-6 sm:pointer-events-auto sm:w-full sm:max-w-md sm:rounded-2xl sm:bg-background/95 sm:shadow-xl sm:ring-1 sm:ring-foreground/10 sm:backdrop-blur">
+              <h2 data-split="scroll" className="font-display text-4xl leading-[0.95] tracking-tight uppercase sm:text-5xl">Where to find us</h2>
+              <address className="mt-3 text-lg text-muted-foreground not-italic">
                 {ADDRESS_LINE_1}
                 <br />
                 {ADDRESS_LINE_2}
               </address>
-              <p className="mt-3 text-sm text-muted-foreground">
+              <p className="mt-3 text-lg text-muted-foreground">
                 Call ahead to book:{" "}
                 <a href={PHONE_TEL_HREF} className="font-semibold text-foreground underline underline-offset-4">
                   {PHONE_NUMBER}
@@ -38,6 +38,7 @@ export function Location() {
               </p>
               <div className="mt-5 flex flex-wrap gap-2">
                 <Button
+                  size="lg"
                   nativeButton={false}
                   render={
                     <a href={DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">
@@ -47,6 +48,7 @@ export function Location() {
                   }
                 />
                 <Button
+                  size="lg"
                   variant="outline"
                   nativeButton={false}
                   render={

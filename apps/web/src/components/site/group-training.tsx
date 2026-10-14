@@ -28,7 +28,7 @@ export function GroupTraining() {
               Train 1-on-1 or together in a group
             </h2>
             <Reveal as="div" className="mt-4">
-            <p className="text-muted-foreground">
+            <p className="text-lg text-muted-foreground">
               At Jamal&rsquo;s, you&rsquo;re not just joining a gym,
               you&rsquo;re becoming part of our fitness family. Train one-on-one
               or with a group &mdash; space is limited either way.
@@ -46,14 +46,14 @@ export function GroupTraining() {
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
-                    <p className="font-semibold uppercase tracking-wide">{title}</p>
-                    <p className="mt-1 text-sm text-muted-foreground">{body}</p>
+                    <p className="text-lg font-semibold uppercase tracking-wide">{title}</p>
+                    <p className="mt-1 text-lg text-muted-foreground">{body}</p>
                   </div>
                 </Reveal>
               ))}
             </ul>
             <Reveal delay={360} className="mt-8">
-            <p className="text-sm text-muted-foreground">
+            <p className="text-lg text-muted-foreground">
               To book either one, call Jamal at{" "}
               <a href={PHONE_TEL_HREF} className="font-semibold text-foreground underline underline-offset-4">
                 {PHONE_NUMBER}

@@ -15,10 +15,10 @@ export function HowItWorks() {
         <ol className="mt-12 grid gap-8 sm:grid-cols-3">
           {howItWorks.map((step, i) => (
             <Reveal as="li" key={step} delay={i * 80} className="flex flex-col items-center gap-3">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-background text-sm font-semibold transition-transform duration-300 ease-[var(--ease-out-expressive)] hover:scale-110">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-background font-display text-xl transition-transform duration-300 ease-[var(--ease-out-expressive)] hover:scale-110">
                 {i + 1}
               </span>
-              <p className="text-sm text-background/80">
+              <p className="text-lg text-background/80">
                 {step}
                 {i === 0 && (
                   <>

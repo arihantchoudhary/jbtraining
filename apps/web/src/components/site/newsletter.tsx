@@ -36,15 +36,15 @@ export function Newsletter() {
         <h2 data-split="scroll" className="font-display text-4xl leading-[0.95] tracking-tight uppercase sm:text-5xl">
           Get Jamal&rsquo;s training tips
         </h2>
-        <p className="mt-3 text-muted-foreground">
+        <p className="mt-4 text-lg text-muted-foreground">
           Workouts and drills from Jamal, straight to your inbox.
         </p>
         {status === "sent" ? (
-          <p className="mt-8 text-muted-foreground">You&rsquo;re on the list!</p>
+          <p className="mt-8 text-lg text-muted-foreground">You&rsquo;re on the list!</p>
         ) : (
           <form onSubmit={onSubmit} className="mx-auto mt-8 flex max-w-md gap-2">
-            <Input name="email" type="email" aria-label="Email address" autoComplete="email" placeholder="you@email.com" required className="h-10" />
-            <Button type="submit" disabled={status === "sending"}>
+            <Input name="email" type="email" aria-label="Email address" autoComplete="email" placeholder="you@email.com" required className="h-12 text-base" />
+            <Button type="submit" size="lg" disabled={status === "sending"}>
               {status === "sending" ? "Signing up…" : "Sign up"}
             </Button>
           </form>

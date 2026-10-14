@@ -9,7 +9,7 @@ export function About() {
           <h2 data-split="scroll" className="font-display text-4xl leading-[0.95] tracking-tight uppercase sm:text-5xl">
             Meet Coach Jamal
           </h2>
-          <p className="mt-6 text-muted-foreground">
+          <p className="mt-6 text-lg text-muted-foreground">
             Get stronger, faster, and more agile with Jamal Baqleh, NCSF
             Certified Personal Trainer. He tailors your workouts to your
             needs, ensuring you get the most out of every session. With

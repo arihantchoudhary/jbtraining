@@ -20,8 +20,8 @@ export function Faq() {
         <Accordion className="mt-10">
           {faqs.map(({ q, a }, i) => (
             <AccordionItem key={q} value={`item-${i}`}>
-              <AccordionTrigger>{q}</AccordionTrigger>
-              <AccordionContent>{a}</AccordionContent>
+              <AccordionTrigger className="py-5 text-lg font-semibold">{q}</AccordionTrigger>
+              <AccordionContent className="text-lg text-muted-foreground">{a}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>

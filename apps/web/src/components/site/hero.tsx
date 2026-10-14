@@ -27,15 +27,14 @@ export function Hero() {
           <div className="animate-in fade-in slide-in-from-bottom-4 fill-mode-both mt-2 flex flex-col items-center gap-3 delay-300 duration-700">
             <Button
               size="lg"
-              className="h-12 px-6 text-base font-semibold"
               nativeButton={false}
               render={<a href={PHONE_TEL_HREF}>Call to Book Your Free Session</a>}
             />
           </div>
-          <ul className="animate-in fade-in fill-mode-both flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium text-white/70 delay-400 duration-700">
+          <ul className="animate-in fade-in fill-mode-both flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-base font-medium text-white/70 delay-400 duration-700">
             {["First session free", "No commitment", "NCSF Certified Trainer"].map((item) => (
               <li key={item} className="flex items-center gap-1.5">
-                <Check className="size-4 text-[#14b84b]" strokeWidth={3} />
+                <Check className="size-5 text-[#14b84b]" strokeWidth={3} />
                 {item}
               </li>
             ))}
