@@ -7,24 +7,26 @@ export function Hero() {
     <section className="relative overflow-hidden bg-black text-white">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(237,43,53,0.18),_transparent_60%)]" />
       <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 py-24 text-center">
-        <span className="animate-in fade-in slide-in-from-bottom-4 fill-mode-both text-xs font-medium tracking-[0.3em] text-white/50 uppercase duration-700">
-          Strength &amp; Conditioning
+        <span className="animate-in fade-in slide-in-from-bottom-4 fill-mode-both text-xs font-semibold tracking-[0.3em] text-primary uppercase duration-700 sm:text-sm">
+          Strength &amp; Conditioning<span className="hidden sm:inline"> &middot; San Francisco</span>
         </span>
-        <h1 className="animate-in fade-in slide-in-from-bottom-4 fill-mode-both text-4xl font-light tracking-tight text-white delay-100 duration-700 sm:text-6xl">
-          Build a Stronger You
+        <h1 className="animate-in fade-in slide-in-from-bottom-4 fill-mode-both font-display text-6xl leading-[0.9] tracking-tight text-white uppercase delay-100 duration-700 sm:text-8xl lg:text-9xl">
+          Stop being <span className="text-primary">weak.</span>
         </h1>
-        <p className="animate-in fade-in slide-in-from-bottom-4 fill-mode-both max-w-2xl text-lg text-white/70 delay-200 duration-700">
-          Improve your Strength, Conditioning, Speed and Agility with
-          personalized coaching.
+        <p className="animate-in fade-in slide-in-from-bottom-4 fill-mode-both max-w-2xl text-lg font-medium text-white/80 delay-200 duration-700 sm:text-xl">
+          Sick of getting winded, pushed off the ball, or sidelined by aches
+          that won&rsquo;t quit? Jamal fixes that &mdash; real strength, speed
+          and conditioning, coached one-on-one or in a group.
         </p>
         <div className="animate-in fade-in slide-in-from-bottom-4 fill-mode-both mt-2 flex flex-col items-center gap-3 delay-300 duration-700">
           <Button
             size="lg"
+            className="h-12 px-6 text-base font-semibold"
             nativeButton={false}
             render={<a href={PHONE_TEL_HREF}>Call to Book Your Free Session</a>}
           />
         </div>
-        <ul className="animate-in fade-in fill-mode-both flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-white/60 delay-400 duration-700">
+        <ul className="animate-in fade-in fill-mode-both flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium text-white/70 delay-400 duration-700">
           <li>✓ First session free</li>
           <li>✓ No commitment</li>
           <li>✓ NCSF Certified Trainer</li>

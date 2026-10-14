@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { INSTAGRAM_URL } from "@/lib/site-content";
+import { INSTAGRAM_URL, PHONE_NUMBER, PHONE_TEL_HREF } from "@/lib/site-content";
 
 type FooterLink = { label: string; href: string; external?: boolean };
 
@@ -9,6 +9,7 @@ const columns: { heading: string; links: FooterLink[] }[] = [
     links: [
       { label: "Bio", href: "/bio" },
       { label: "Contact Me", href: "/contact" },
+      { label: `Call ${PHONE_NUMBER}`, href: PHONE_TEL_HREF, external: true },
     ],
   },
   {
@@ -38,8 +39,10 @@ export function SiteFooter() {
                     {l.external ? (
                       <a
                         href={l.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        {...(l.href.startsWith("http") && {
+                          target: "_blank",
+                          rel: "noopener noreferrer",
+                        })}
                         className="text-sm hover:underline"
                       >
                         {l.label}

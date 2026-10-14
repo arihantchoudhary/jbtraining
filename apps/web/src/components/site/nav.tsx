@@ -6,12 +6,12 @@ import { PHONE_NUMBER, PHONE_TEL_HREF } from "@/lib/site-content";
 export function SiteNav() {
   return (
     <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
         <Link href="/" className="flex items-center gap-2">
           <Image src="/images/logo.webp" alt="JB Training" width={44} height={31} />
-          <span className="text-lg font-bold tracking-tight">JB Training</span>
+          <span className="text-base font-bold tracking-tight whitespace-nowrap sm:text-lg">JB Training</span>
         </Link>
-        <nav className="flex items-center gap-6">
+        <nav className="flex items-center gap-3 sm:gap-6">
           <Link href="/bio" className="text-sm font-medium hover:underline">
             Bio
           </Link>

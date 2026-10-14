@@ -18,7 +18,18 @@ export function HowItWorks() {
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-background text-sm font-semibold transition-transform duration-300 ease-[var(--ease-out-expressive)] hover:scale-110">
                 {i + 1}
               </span>
-              <p className="text-sm text-background/80">{step}</p>
+              <p className="text-sm text-background/80">
+                {step}
+                {i === 0 && (
+                  <>
+                    {" "}
+                    <a href={PHONE_TEL_HREF} className="font-semibold text-background underline underline-offset-4">
+                      {PHONE_NUMBER}
+                    </a>
+                    .
+                  </>
+                )}
+              </p>
             </Reveal>
           ))}
         </ol>

@@ -2,8 +2,8 @@ import { SiteNav } from "@/components/site/nav";
 import { Hero } from "@/components/site/hero";
 import { About } from "@/components/site/about";
 import { GroupTraining } from "@/components/site/group-training";
-import { Gallery } from "@/components/site/gallery";
 import { HowItWorks } from "@/components/site/how-it-works";
+import { Location } from "@/components/site/location";
 import { Testimonials } from "@/components/site/testimonials";
 import { InstagramFollow } from "@/components/site/instagram";
 import { Faq, FaqClosingCta } from "@/components/site/faq";
@@ -16,11 +16,11 @@ export default function Home() {
       <SiteNav />
       <main className="flex-1">
         <Hero />
-        <Gallery />
         <InstagramFollow />
         <About />
         <GroupTraining />
         <HowItWorks />
+        <Location />
         <Testimonials />
         <Faq />
         <FaqClosingCta />

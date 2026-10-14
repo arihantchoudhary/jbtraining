@@ -1,13 +1,52 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Maximize2, X } from "lucide-react";
 import { Reveal } from "@/components/site/reveal";
 import { galleryImages } from "@/lib/gallery-content";
 
-export function Gallery() {
+// Three staggered columns; each drifts at its own speed as the section scrolls by.
+const COLUMNS = [
+  { indices: [0, 3, 6], shift: -60, offset: "" },
+  { indices: [1, 4, 7], shift: 60, offset: "mt-10 sm:mt-16" },
+  { indices: [2, 5, 8], shift: -30, offset: "mt-4 sm:mt-6" },
+] as const;
+const ASPECTS = ["aspect-[4/5]", "aspect-square", "aspect-[4/3]"] as const;
+
+function useScrollProgress<T extends HTMLElement>() {
+  const ref = useRef<T>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const rect = el.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const p = Math.min(1, Math.max(0, (vh - rect.top) / (vh + rect.height)));
+      el.style.setProperty("--scroll", (p - 0.5).toFixed(4));
+    };
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
+  return ref;
+}
+
+export function GroupCollage() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const collageRef = useScrollProgress<HTMLDivElement>();
 
   const close = useCallback(() => setOpenIndex(null), []);
   const showPrev = useCallback(
@@ -34,42 +73,42 @@ export function Gallery() {
     };
   }, [openIndex, close, showPrev, showNext]);
 
-  return (
-    <section className="bg-zinc-50 dark:bg-zinc-950">
-      <div className="mx-auto max-w-6xl px-6 py-16">
-        <Reveal>
-          <h2 className="text-center text-2xl font-bold tracking-tight sm:text-3xl">
-            Inside JB Training
-          </h2>
-          <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">
-            Real sessions, real athletes &mdash; a look at what training with
-            Jamal actually looks like.
-          </p>
-        </Reveal>
 
-        <div className="mt-10 grid grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-3 lg:grid-cols-6">
-          {galleryImages.map((img, i) => (
-            <button
-              key={img.src}
-              type="button"
-              onClick={() => setOpenIndex(i)}
-              className="group relative aspect-square overflow-hidden rounded-lg ring-1 ring-foreground/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-              aria-label={`Open image: ${img.story}`}
-            >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                className="object-cover transition-transform duration-700 ease-[var(--ease-out-expressive)] group-hover:scale-110"
-                sizes="(min-width: 1024px) 16vw, (min-width: 640px) 25vw, 33vw"
-                priority={i < 3}
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors duration-300 group-hover:bg-black/40">
-                <Maximize2 className="size-5 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              </div>
-            </button>
-          ))}
-        </div>
+  return (
+    <>
+      <div ref={collageRef} className="grid grid-cols-3 gap-2 sm:gap-3 [--scroll:0]">
+        {COLUMNS.map((col, c) => (
+          <div
+            key={c}
+            className={`flex flex-col gap-2 will-change-transform sm:gap-3 ${col.offset}`}
+            style={{ transform: `translate3d(0, calc(var(--scroll) * ${col.shift}px), 0)` }}
+          >
+            {col.indices.map((i, row) => {
+              const img = galleryImages[i];
+              return (
+                <Reveal key={img.src} delay={(c + row) * 90}>
+                  <button
+                    type="button"
+                    onClick={() => setOpenIndex(i)}
+                    className={`group relative block w-full overflow-hidden rounded-xl ring-1 ring-foreground/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring ${ASPECTS[(c + row) % ASPECTS.length]}`}
+                    aria-label={`Open image: ${img.story}`}
+                  >
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      fill
+                      className="object-cover transition-transform duration-700 ease-[var(--ease-out-expressive)] group-hover:scale-110"
+                      sizes="(min-width: 1024px) 20vw, 33vw"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors duration-300 group-hover:bg-black/40">
+                      <Maximize2 className="size-5 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    </div>
+                  </button>
+                </Reveal>
+              );
+            })}
+          </div>
+        ))}
       </div>
 
       {openIndex !== null && (
@@ -128,6 +167,6 @@ export function Gallery() {
           </button>
         </div>
       )}
-    </section>
+    </>
   );
 }

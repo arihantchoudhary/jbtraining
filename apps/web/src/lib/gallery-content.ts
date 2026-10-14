@@ -1,17 +1,10 @@
 export const galleryImages = [
   {
-    src: "/images/gallery/portrait-1.jpg",
-    alt: "Jamal Baqleh coaching at JB Training",
-    width: 1163,
-    height: 1400,
-    story: "Coach Jamal, locked in mid-session.",
-  },
-  {
-    src: "/images/gallery/coaching-squat.jpg",
-    alt: "Jamal Baqleh coaching a client through a squat",
-    width: 642,
-    height: 480,
-    story: "Hands-on coaching, dialing in proper squat form.",
+    src: "/images/group-masks.png",
+    alt: "Group training session at JB Training",
+    width: 955,
+    height: 715,
+    story: "Full house on the court for a group session.",
   },
   {
     src: "/images/gallery/group-1.jpg",
@@ -26,13 +19,6 @@ export const galleryImages = [
     width: 642,
     height: 480,
     story: "Post-workout energy from the whole crew.",
-  },
-  {
-    src: "/images/gallery/portrait-2.jpg",
-    alt: "Jamal Baqleh standing in the gym",
-    width: 1157,
-    height: 1400,
-    story: "Between sets, planning the next block.",
   },
   {
     src: "/images/gallery/group-2.jpg",
@@ -54,13 +40,6 @@ export const galleryImages = [
     width: 1600,
     height: 1200,
     story: "Regulars, back for another round.",
-  },
-  {
-    src: "/images/gallery/portrait-3.jpg",
-    alt: "Jamal Baqleh coaching, side profile",
-    width: 1160,
-    height: 1400,
-    story: "Talking an athlete through the next drill.",
   },
   {
     src: "/images/gallery/group-4.jpg",

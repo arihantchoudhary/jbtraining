@@ -1,6 +1,12 @@
 export const PHONE_NUMBER = "650-219-3159" as const;
 export const PHONE_TEL_HREF = "tel:+16502193159" as const;
 
+export const ADDRESS_LINE_1 = "1524 Geneva Ave" as const;
+export const ADDRESS_LINE_2 = "San Francisco, CA 94112" as const;
+const ADDRESS_QUERY = encodeURIComponent(`${ADDRESS_LINE_1}, ${ADDRESS_LINE_2}`);
+export const MAP_EMBED_URL = `https://www.google.com/maps?q=${ADDRESS_QUERY}&output=embed`;
+export const DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${ADDRESS_QUERY}`;
+
 export const INSTAGRAM_HANDLE = "@jbaqleh.training" as const;
 export const INSTAGRAM_URL = "https://www.instagram.com/jbaqleh.training/" as const;
 export const INSTAGRAM_FOLLOWERS_COUNT = 1800 as const;
@@ -60,7 +66,7 @@ export const bio = [
 ] as const;
 
 export const howItWorks = [
-  `Call or text Jamal at ${PHONE_NUMBER}.`,
-  "Pick a time and place that works for you.",
-  "Show up and train. Your first session is free.",
+  "Call or text Jamal at",
+  "Pick a private 1-on-1 or group session at a time that works for you.",
+  `Show up at ${ADDRESS_LINE_1} and train. Your first session is free.`,
 ] as const;
