@@ -34,16 +34,16 @@ export function Newsletter() {
     <section className="border-t bg-zinc-50 dark:bg-zinc-950">
       <div className="mx-auto max-w-2xl px-6 py-20 text-center">
         <h2 data-split="scroll" className="font-display text-4xl leading-[0.95] tracking-tight uppercase sm:text-5xl">
-          Subscribe now!
+          Get Jamal&rsquo;s training tips
         </h2>
         <p className="mt-3 text-muted-foreground">
-          Stay in the loop with everything you need to know.
+          Workouts and drills from Jamal, straight to your inbox.
         </p>
         {status === "sent" ? (
           <p className="mt-8 text-muted-foreground">You&rsquo;re on the list!</p>
         ) : (
           <form onSubmit={onSubmit} className="mx-auto mt-8 flex max-w-md gap-2">
-            <Input name="email" type="email" placeholder="you@email.com" required />
+            <Input name="email" type="email" aria-label="Email address" autoComplete="email" placeholder="you@email.com" required className="h-10" />
             <Button type="submit" disabled={status === "sending"}>
               {status === "sending" ? "Signing up…" : "Sign up"}
             </Button>
