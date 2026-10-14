@@ -8,7 +8,7 @@ export function HowItWorks() {
     <section id="free-session" className="bg-foreground text-background">
       <div className="mx-auto max-w-3xl px-6 py-20 text-center">
         <Reveal>
-          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+          <h2 data-split="scroll" className="text-2xl font-bold tracking-tight sm:text-3xl">
             Get your free session in 3 steps
           </h2>
         </Reveal>

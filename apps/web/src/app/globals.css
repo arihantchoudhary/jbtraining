@@ -144,3 +144,25 @@
     scroll-behavior: auto !important;
   }
 }
+/* Split headlines stay hidden until GSAP splits them; the fallback reveals them if JS never runs. */
+html.motion [data-split] {
+  visibility: hidden;
+  animation: split-fallback 0s 2.5s forwards;
+}
+@keyframes split-fallback {
+  to {
+    visibility: visible;
+  }
+}
+
+/* Slow ambient drift behind the hero headline. */
+@keyframes hero-glow {
+  from {
+    transform: translate3d(-4%, -2%, 0) scale(1);
+    opacity: 0.8;
+  }
+  to {
+    transform: translate3d(4%, 3%, 0) scale(1.12);
+    opacity: 1;
+  }
+}

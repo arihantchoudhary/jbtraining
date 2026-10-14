@@ -6,7 +6,7 @@ export function About() {
     <section className="mx-auto max-w-6xl px-6 py-20">
       <div className="grid items-center gap-10 sm:grid-cols-2">
         <Reveal>
-          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+          <h2 data-split="scroll" className="text-2xl font-bold tracking-tight sm:text-3xl">
             Transform your fitness journey with a free session with Jamal
             Baqleh!
           </h2>

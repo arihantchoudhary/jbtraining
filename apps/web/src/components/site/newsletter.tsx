@@ -33,7 +33,7 @@ export function Newsletter() {
   return (
     <section className="border-t bg-zinc-50 dark:bg-zinc-950">
       <div className="mx-auto max-w-2xl px-6 py-20 text-center">
-        <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+        <h2 data-split="scroll" className="text-2xl font-bold tracking-tight sm:text-3xl">
           Subscribe now!
         </h2>
         <p className="mt-3 text-muted-foreground">

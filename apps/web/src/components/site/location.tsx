@@ -27,7 +27,7 @@ export function Location() {
               <span className="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary">
                 <MapPin className="size-5" />
               </span>
-              <h2 className="mt-4 text-2xl font-bold tracking-tight">Where to find us</h2>
+              <h2 data-split="scroll" className="mt-4 text-2xl font-bold tracking-tight">Where to find us</h2>
               <address className="mt-2 text-muted-foreground not-italic">
                 {ADDRESS_LINE_1}
                 <br />

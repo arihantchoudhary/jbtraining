@@ -1,5 +1,6 @@
 import { SiteNav } from "@/components/site/nav";
 import { Hero } from "@/components/site/hero";
+import { KineticBand } from "@/components/site/kinetic-band";
 import { About } from "@/components/site/about";
 import { GroupTraining } from "@/components/site/group-training";
 import { HowItWorks } from "@/components/site/how-it-works";
@@ -16,6 +17,7 @@ export default function Home() {
       <SiteNav />
       <main className="flex-1">
         <Hero />
+        <KineticBand />
         <InstagramFollow />
         <About />
         <GroupTraining />

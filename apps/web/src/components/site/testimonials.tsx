@@ -19,7 +19,7 @@ export function Testimonials() {
   return (
     <section className="border-y bg-zinc-50 dark:bg-zinc-950">
       <div className="mx-auto max-w-6xl px-6 py-20">
-        <h2 className="text-center text-2xl font-bold tracking-tight sm:text-3xl">
+        <h2 data-split="scroll" className="text-center text-2xl font-bold tracking-tight sm:text-3xl">
           Testimonials
         </h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-2">

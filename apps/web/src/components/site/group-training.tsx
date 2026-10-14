@@ -26,7 +26,7 @@ export function GroupTraining() {
         </div>
         <div className="lg:col-span-5">
           <Reveal className="lg:sticky lg:top-28">
-            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+            <h2 data-split="scroll" className="text-2xl font-bold tracking-tight sm:text-3xl">
               Train 1-on-1 or together in a group
             </h2>
             <p className="mt-4 text-muted-foreground">
