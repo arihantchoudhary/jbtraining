@@ -15,15 +15,14 @@ export function Testimonials() {
               <Reveal delay={i * 80} className="h-full">
                 <figure className="flex h-full flex-col rounded-2xl bg-background p-6 shadow-[0_1px_2px_rgb(0_0_0/0.04),0_8px_24px_-12px_rgb(0_0_0/0.18)] ring-1 ring-foreground/10 sm:p-8">
                   <div className="flex items-end justify-between gap-4">
-                    {/* Source photos are 300px; 128px keeps them sharp on 2x screens. */}
+                    {/* Source photos are 300px; served as-is, 128px keeps them sharp on 2x screens. */}
                     <Image
                       src={t.photo}
                       alt={t.name}
                       width={128}
                       height={128}
-                      quality={90}
-                      sizes="128px"
-                      className="size-28 rounded-xl object-cover ring-2 ring-brand-green ring-offset-2 ring-offset-background sm:size-32"
+                      unoptimized
+                      className="size-28 rounded-xl object-cover object-top ring-2 ring-brand-green ring-offset-2 ring-offset-background sm:size-32"
                     />
                     <span aria-hidden="true" className="font-display text-8xl leading-[0.6] text-primary">
                       &ldquo;
