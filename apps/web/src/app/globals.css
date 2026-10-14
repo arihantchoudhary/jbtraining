@@ -129,6 +129,10 @@
   body {
     @apply bg-background text-foreground;
   }
+  h1,
+  h2 {
+    text-wrap: balance;
+  }
   html {
     @apply font-sans;
   }
