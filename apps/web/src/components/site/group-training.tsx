@@ -1,4 +1,4 @@
-import { PhoneCall, User, Users } from "lucide-react";
+import { PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GroupCollage } from "@/components/site/group-collage";
 import { Reveal } from "@/components/site/reveal";
@@ -6,12 +6,10 @@ import { PHONE_NUMBER, PHONE_TEL_HREF } from "@/lib/site-content";
 
 const SESSION_TYPES = [
   {
-    icon: User,
     title: "Private 1-on-1",
     body: "Just you and Jamal. A plan built around your goals, your level and your schedule.",
   },
   {
-    icon: Users,
     title: "Group sessions",
     body: "Train with a crew in a supportive, high-energy atmosphere where everyone grows stronger together.",
   },
@@ -25,29 +23,37 @@ export function GroupTraining() {
           <GroupCollage />
         </div>
         <div className="lg:col-span-5">
-          <Reveal className="lg:sticky lg:top-28">
-            <h2 data-split="scroll" className="text-2xl font-bold tracking-tight sm:text-3xl">
+          <div className="lg:sticky lg:top-28">
+            <h2 data-split="scroll" className="font-display text-4xl leading-[0.95] tracking-tight uppercase sm:text-5xl">
               Train 1-on-1 or together in a group
             </h2>
-            <p className="mt-4 text-muted-foreground">
+            <Reveal as="div" className="mt-4">
+            <p className="text-muted-foreground">
               At Jamal&rsquo;s, you&rsquo;re not just joining a gym,
               you&rsquo;re becoming part of our fitness family. Train one-on-one
               or with a group &mdash; space is limited either way.
             </p>
+            </Reveal>
             <ul className="mt-8 space-y-4">
-              {SESSION_TYPES.map(({ icon: Icon, title, body }) => (
-                <li key={title} className="flex gap-4 rounded-xl border bg-background p-4">
-                  <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <Icon className="size-5" />
+              {SESSION_TYPES.map(({ title, body }, i) => (
+                <Reveal
+                  as="li"
+                  key={title}
+                  delay={120 + i * 120}
+                  className="flex gap-5 border-t border-foreground/15 pt-4"
+                >
+                  <span className="font-display text-4xl leading-none text-primary">
+                    {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
-                    <p className="font-semibold">{title}</p>
+                    <p className="font-semibold uppercase tracking-wide">{title}</p>
                     <p className="mt-1 text-sm text-muted-foreground">{body}</p>
                   </div>
-                </li>
+                </Reveal>
               ))}
             </ul>
-            <p className="mt-8 text-sm text-muted-foreground">
+            <Reveal delay={360} className="mt-8">
+            <p className="text-sm text-muted-foreground">
               To book either one, call Jamal at{" "}
               <a href={PHONE_TEL_HREF} className="font-semibold text-foreground underline underline-offset-4">
                 {PHONE_NUMBER}
@@ -65,7 +71,8 @@ export function GroupTraining() {
                 </a>
               }
             />
-          </Reveal>
+            </Reveal>
+          </div>
         </div>
       </div>
     </section>

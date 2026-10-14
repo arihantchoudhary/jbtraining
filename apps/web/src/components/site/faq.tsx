@@ -12,7 +12,7 @@ export function Faq() {
   return (
     <section className="mx-auto max-w-3xl px-6 py-20">
       <Reveal>
-        <h2 data-split="scroll" className="text-center text-2xl font-bold tracking-tight sm:text-3xl">
+        <h2 data-split="scroll" className="text-center font-display text-4xl leading-[0.95] tracking-tight uppercase sm:text-5xl">
           Frequently Asked Questions
         </h2>
       </Reveal>

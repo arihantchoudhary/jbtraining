@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Anton, Inter, Geist_Mono } from "next/font/google";
+import { Anton, Archivo, Geist_Mono } from "next/font/google";
 import { MobileCallBar } from "@/components/site/mobile-call-bar";
 import { Motion } from "@/components/site/motion";
 import "lenis/dist/lenis.css";
 import "./globals.css";
 
-const inter = Inter({
+const archivo = Archivo({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
@@ -24,14 +24,14 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "JB Training",
   description:
-    "Stop being weak. Strength, speed and conditioning coaching with Jamal Baqleh, NCSF Certified Personal Trainer. First session free.",
+    "Stop getting left behind. Strength, speed and conditioning coaching with Jamal Baqleh, NCSF Certified Personal Trainer. First session free.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${anton.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${archivo.variable} ${anton.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>

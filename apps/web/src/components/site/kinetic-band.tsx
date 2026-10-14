@@ -1,6 +1,6 @@
 import { testimonials } from "@/lib/site-content";
 
-const MANTRA = ["Stop being weak", "No excuses", "Stronger", "Faster", "Built different"];
+const MANTRA = ["Stay in the game", "No excuses", "Stronger", "Faster", "Built different"];
 const TEAMS = testimonials.map((t) => t.affiliation);
 
 function Row({ items, direction, className }: { items: readonly string[]; direction: 1 | -1; className: string }) {

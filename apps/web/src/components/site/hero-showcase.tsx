@@ -10,17 +10,19 @@ export function HeroShowcase() {
 
   return (
     <div className="animate-in fade-in zoom-in-95 fill-mode-both relative mx-auto mt-10 flex w-full max-w-3xl items-center justify-center delay-500 duration-700">
-      <div className="relative hidden rotate-[-8deg] sm:block">
+      <div data-fan-scroll="-1" className="relative hidden sm:block">
+        <div data-fan-in="-1" className="rotate-[-8deg]">
         <Image
-          src="/images/gallery/group-flex.jpg"
-          alt="JB Training group flexing after a session"
-          width={642}
-          height={480}
-          className="h-40 w-32 -translate-x-6 rounded-2xl object-cover shadow-2xl ring-1 ring-white/10 transition-transform duration-300 ease-[var(--ease-out-expressive)] hover:scale-105 hover:rotate-[-4deg] sm:h-52 sm:w-40"
+          src="/images/gallery/portrait-1.jpg"
+          alt="Coach Jamal Baqleh mid-session"
+          width={1163}
+          height={1400}
+          className="h-40 w-32 -translate-x-6 rounded-2xl object-cover shadow-2xl ring-1 ring-white/10 transition-transform duration-300 ease-[var(--ease-out-expressive)] hover:scale-105 hover:rotate-[-4deg] sm:h-60 sm:w-44 lg:h-72 lg:w-52"
         />
+        </div>
       </div>
 
-      <div className="relative z-10 aspect-9/16 w-full max-w-[280px] shrink-0 overflow-hidden rounded-[2rem] bg-black shadow-2xl ring-4 ring-white/10">
+      <div data-phone className="relative z-10 aspect-9/16 w-full max-w-[280px] shrink-0 overflow-hidden rounded-[2rem] bg-black shadow-2xl ring-4 ring-white/10">
         <video
           ref={videoRef}
           src="/videos/rebels-training.mp4"
@@ -47,14 +49,16 @@ export function HeroShowcase() {
         )}
       </div>
 
-      <div className="relative hidden rotate-[7deg] sm:block">
+      <div data-fan-scroll="1" className="relative hidden sm:block">
+        <div data-fan-in="1" className="rotate-[7deg]">
         <Image
           src="/images/gallery/portrait-2.jpg"
           alt="Jamal Baqleh standing in the gym"
           width={1157}
           height={1400}
-          className="h-40 w-32 translate-x-6 rounded-2xl object-cover shadow-2xl ring-1 ring-white/10 transition-transform duration-300 ease-[var(--ease-out-expressive)] hover:scale-105 hover:rotate-[3deg] sm:h-52 sm:w-40"
+          className="h-40 w-32 translate-x-6 rounded-2xl object-cover shadow-2xl ring-1 ring-white/10 transition-transform duration-300 ease-[var(--ease-out-expressive)] hover:scale-105 hover:rotate-[3deg] sm:h-60 sm:w-44 lg:h-72 lg:w-52"
         />
+        </div>
       </div>
     </div>
   );

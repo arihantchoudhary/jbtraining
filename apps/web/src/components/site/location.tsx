@@ -1,4 +1,4 @@
-import { MapPin, Navigation, PhoneCall } from "lucide-react";
+import { Navigation, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/reveal";
 import {
@@ -24,10 +24,7 @@ export function Location() {
           />
           <div className="sm:pointer-events-none sm:absolute sm:inset-0 sm:flex sm:items-center sm:justify-end sm:p-10">
             <div className="p-6 sm:pointer-events-auto sm:w-full sm:max-w-sm sm:rounded-2xl sm:bg-background/95 sm:shadow-xl sm:ring-1 sm:ring-foreground/10 sm:backdrop-blur">
-              <span className="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                <MapPin className="size-5" />
-              </span>
-              <h2 data-split="scroll" className="mt-4 text-2xl font-bold tracking-tight">Where to find us</h2>
+              <h2 data-split="scroll" className="font-display text-3xl leading-[0.95] tracking-tight uppercase">Where to find us</h2>
               <address className="mt-2 text-muted-foreground not-italic">
                 {ADDRESS_LINE_1}
                 <br />

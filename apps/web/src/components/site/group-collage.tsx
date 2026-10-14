@@ -62,13 +62,15 @@ export function GroupCollage() {
                     className={`group relative block w-full overflow-hidden rounded-xl ring-1 ring-foreground/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring ${ASPECTS[(c + row) % ASPECTS.length]}`}
                     aria-label={`Open image: ${img.story}`}
                   >
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      fill
-                      className="object-cover transition-transform duration-700 ease-[var(--ease-out-expressive)] group-hover:scale-110"
-                      sizes="(min-width: 1024px) 20vw, 33vw"
-                    />
+                    <div data-zoom className="absolute inset-0">
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        fill
+                        className="object-cover transition-transform duration-700 ease-[var(--ease-out-expressive)] group-hover:scale-110"
+                        sizes="(min-width: 1024px) 20vw, 33vw"
+                      />
+                    </div>
                     <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors duration-300 group-hover:bg-black/40">
                       <Maximize2 className="size-5 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                     </div>

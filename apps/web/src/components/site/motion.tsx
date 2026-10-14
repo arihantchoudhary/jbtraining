@@ -18,6 +18,10 @@ function prefersReducedMotion() {
 //   data-parallax="<px>"           element drifts by ±px while its parent scrolls through
 //   data-scroll-out                element lifts and fades as its section scrolls away
 //   data-marquee="1" | "-1"        row slides sideways with scroll, in that direction
+//   data-reveal="<delay s>"        block blurs and rises into place when it scrolls in
+//   data-zoom                      image eases from a slight zoom as it scrolls through
+//   data-fan-in / data-fan-scroll  hero side photos deal out from behind the phone, then fan wider on scroll
+//   data-phone                     hero phone lifts and grows slightly on scroll
 export function Motion() {
   const pathname = usePathname();
 
@@ -55,6 +59,69 @@ export function Motion() {
               scrollTrigger: onLoad ? undefined : { trigger: el, start: "top 88%", once: true },
             });
           },
+        });
+      });
+
+      document.querySelectorAll<HTMLElement>("[data-reveal]").forEach((el) => {
+        el.style.animation = "none";
+        gsap.fromTo(
+          el,
+          { autoAlpha: 0, y: 48, filter: "blur(8px)" },
+          {
+            autoAlpha: 1,
+            y: 0,
+            filter: "blur(0px)",
+            duration: 1.1,
+            delay: Number(el.dataset.reveal) || 0,
+            ease: "expo.out",
+            clearProps: "filter",
+            scrollTrigger: { trigger: el, start: "top 90%", once: true },
+          }
+        );
+      });
+
+      document.querySelectorAll<HTMLElement>("[data-zoom]").forEach((el) => {
+        gsap.fromTo(
+          el,
+          { scale: 1.18 },
+          {
+            scale: 1,
+            ease: "none",
+            scrollTrigger: { trigger: el, start: "top bottom", end: "bottom top", scrub: true },
+          }
+        );
+      });
+
+      document.querySelectorAll<HTMLElement>("[data-fan-in]").forEach((el) => {
+        const dir = Number(el.dataset.fanIn);
+        gsap.from(el, {
+          x: -dir * 160,
+          rotation: -dir * 10,
+          scale: 0.8,
+          autoAlpha: 0,
+          duration: 1.3,
+          delay: 0.7,
+          ease: "expo.out",
+        });
+      });
+
+      document.querySelectorAll<HTMLElement>("[data-fan-scroll]").forEach((el) => {
+        const dir = Number(el.dataset.fanScroll);
+        gsap.to(el, {
+          x: dir * 90,
+          y: -60,
+          rotation: dir * 8,
+          ease: "none",
+          scrollTrigger: { trigger: el.closest("section") ?? el, start: "top top", end: "bottom top", scrub: true },
+        });
+      });
+
+      document.querySelectorAll<HTMLElement>("[data-phone]").forEach((el) => {
+        gsap.to(el, {
+          scale: 1.08,
+          y: -40,
+          ease: "none",
+          scrollTrigger: { trigger: el.closest("section") ?? el, start: "top top", end: "bottom top", scrub: true },
         });
       });
 

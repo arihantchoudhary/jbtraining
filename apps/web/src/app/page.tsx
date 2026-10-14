@@ -17,10 +17,10 @@ export default function Home() {
       <SiteNav />
       <main className="flex-1">
         <Hero />
+        <GroupTraining />
         <KineticBand />
         <InstagramFollow />
         <About />
-        <GroupTraining />
         <HowItWorks />
         <Location />
         <Testimonials />
