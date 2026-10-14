@@ -10,16 +10,19 @@ export function Hero() {
       <div className="pointer-events-none absolute -inset-[20%] bg-[radial-gradient(ellipse_at_bottom,_rgba(0,151,54,0.45),_transparent_55%)] motion-safe:animate-[hero-glow_18s_ease-in-out_infinite_alternate-reverse]" />
       <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 py-24 text-center">
         <div data-scroll-out className="flex flex-col items-center gap-6">
-          <span className="animate-in fade-in slide-in-from-bottom-4 fill-mode-both text-xs font-semibold tracking-[0.3em] text-[#14b84b] uppercase duration-700 sm:text-sm">
+          <span className="animate-in fade-in slide-in-from-bottom-4 fill-mode-both text-xs font-semibold tracking-[0.3em] text-white/50 uppercase duration-700 sm:text-sm">
             Strength &amp; Conditioning<span className="hidden sm:inline"> &middot; San Francisco</span>
           </span>
           <h1 data-split="load" className="font-display text-6xl leading-[0.9] tracking-tight text-white uppercase sm:text-8xl lg:text-9xl">
-            Stop getting <span className="whitespace-nowrap text-primary">left behind.</span>
+            Don&rsquo;t stay <span className="text-primary">weak.</span>
           </h1>
+          <p className="animate-in fade-in slide-in-from-bottom-4 fill-mode-both -mt-2 font-display text-2xl tracking-[0.12em] text-[#14b84b] uppercase delay-300 duration-700 sm:text-4xl">
+            Physically &amp; mentally
+          </p>
           <p className="animate-in fade-in slide-in-from-bottom-4 fill-mode-both max-w-2xl text-lg font-medium text-white/80 delay-200 duration-700 sm:text-xl">
-            Tired of getting winded, outpaced, or sidelined by aches that
-            won&rsquo;t quit? Jamal gets you back in the game &mdash; real
-            strength, speed and conditioning, coached one-on-one or in a group.
+            Gassed when it counts, outpaced, or doubting yourself under
+            pressure? Jamal builds the strength, speed and mental toughness
+            that keeps you in the game, one-on-one or in a group.
           </p>
           <div className="animate-in fade-in slide-in-from-bottom-4 fill-mode-both mt-2 flex flex-col items-center gap-3 delay-300 duration-700">
             <Button
