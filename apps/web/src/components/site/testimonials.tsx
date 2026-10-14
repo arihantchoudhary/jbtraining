@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Reveal } from "@/components/site/reveal";
 import { testimonials } from "@/lib/site-content";
 
@@ -7,45 +6,41 @@ export function Testimonials() {
   return (
     <section className="border-y bg-zinc-50 dark:bg-zinc-950">
       <div className="mx-auto max-w-6xl px-6 py-20">
-        <h2 data-split="scroll" className="text-center font-display text-4xl leading-[0.95] tracking-tight uppercase sm:text-5xl">
-          Testimonials
+        <h2 data-split="scroll" className="text-center font-display text-4xl leading-[0.95] tracking-tight text-balance uppercase sm:text-5xl">
+          Athletes who trained with Jamal
         </h2>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+        <ul className="mt-12 grid gap-6 sm:grid-cols-2">
           {testimonials.map((t, i) => (
-            <div key={t.name} data-parallax={i % 2 ? 28 : -28}>
-            <Reveal delay={i * 60}>
-              <Card>
-                <CardContent>
-                  <p className="text-muted-foreground">&ldquo;{t.quote}&rdquo;</p>
-                </CardContent>
-                <CardFooter className="items-center gap-4">
-                  <Image
-                    src={t.photo}
-                    alt={t.name}
-                    width={96}
-                    height={96}
-                    className="size-20 shrink-0 rounded-full object-cover ring-2 ring-brand-green ring-offset-2 ring-offset-card sm:size-24"
-                  />
-                  <div>
+            <li key={t.name} data-parallax={i % 2 ? 28 : -28}>
+              <Reveal delay={i * 80} className="h-full">
+                <figure className="flex h-full flex-col rounded-2xl bg-background p-6 shadow-[0_1px_2px_rgb(0_0_0/0.04),0_8px_24px_-12px_rgb(0_0_0/0.18)] ring-1 ring-foreground/10 sm:p-8">
+                  <div className="flex items-end justify-between gap-4">
+                    {/* Source photos are 300px; 128px keeps them sharp on 2x screens. */}
                     <Image
-                      src="/images/stars.webp"
-                      alt="5 stars"
-                      width={90}
-                      height={17}
+                      src={t.photo}
+                      alt={t.name}
+                      width={128}
+                      height={128}
+                      quality={90}
+                      sizes="128px"
+                      className="size-28 rounded-xl object-cover ring-2 ring-brand-green ring-offset-2 ring-offset-background sm:size-32"
                     />
-                    <p className="mt-1 text-sm font-semibold">
-                      {t.name}{" "}
-                      <span className="font-normal text-muted-foreground">
-                        — {t.affiliation}
-                      </span>
-                    </p>
+                    <span aria-hidden="true" className="font-display text-8xl leading-[0.6] text-primary">
+                      &ldquo;
+                    </span>
                   </div>
-                </CardFooter>
-              </Card>
-            </Reveal>
-            </div>
+                  <blockquote className="mt-6 flex-1 text-base leading-relaxed text-foreground/80 sm:text-lg">
+                    {t.quote}
+                  </blockquote>
+                  <figcaption className="mt-6 border-t border-foreground/10 pt-4">
+                    <p className="font-semibold tracking-wide uppercase">{t.name}</p>
+                    <p className="text-sm text-muted-foreground">{t.affiliation}</p>
+                  </figcaption>
+                </figure>
+              </Reveal>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );
