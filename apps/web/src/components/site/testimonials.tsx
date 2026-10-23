@@ -24,9 +24,6 @@ export function Testimonials() {
                       unoptimized
                       className="size-28 rounded-xl object-cover object-top ring-2 ring-brand-green ring-offset-2 ring-offset-background sm:size-32"
                     />
-                    <span aria-hidden="true" className="font-display text-8xl leading-[0.6] text-primary">
-                      &ldquo;
-                    </span>
                   </div>
                   <blockquote className="mt-6 flex-1 text-lg leading-relaxed text-foreground/80">
                     {t.quote}
