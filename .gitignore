@@ -24,3 +24,7 @@ terraform.tfvars
 
 # OS
 .DS_Store
+.vercel
+
+# Vercel
+.vercel
