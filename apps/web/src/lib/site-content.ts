@@ -29,7 +29,7 @@ export const testimonials = [
   },
   {
     quote:
-      "When I think of the pivotal figures in my athletic journey at San José State Men's Soccer, Jamal immediately comes to mind. As my strength and conditioning trainer, he brought a unique blend of technical knowledge, motivational prowess, and an instinctive understanding of an athlete's needs.",
+      "Jamal handled my strength and conditioning, and the difference showed every time I stepped on the court. He pushed me to get stronger, quicker, and more resilient, and his knowledge, energy, and genuine care for his athletes made every session worth it. I'd recommend him to any player serious about reaching the next level.",
     name: "Justin Gutang",
     affiliation: "Changwon LG Sakers",
     photo: "/images/testimonials/justin-gutang.jpg",
