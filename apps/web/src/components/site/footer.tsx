@@ -27,7 +27,7 @@ export function SiteFooter() {
     <footer className="bg-brand-green py-10 text-white">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 sm:flex-row sm:justify-between">
         <p className="text-sm">
-          © {new Date().getFullYear()} jbtraining.com. All rights reserved.
+          © {new Date().getFullYear()} jbtraining.org. All rights reserved.
         </p>
         <div className="flex flex-wrap gap-x-12 gap-y-6">
           {columns.map((col) => (
