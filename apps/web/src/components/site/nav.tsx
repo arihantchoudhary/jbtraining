@@ -12,7 +12,7 @@ export function SiteNav() {
           <span className="text-base font-bold tracking-tight whitespace-nowrap sm:text-lg">JB Training</span>
         </Link>
         <nav className="flex items-center gap-3 sm:gap-6">
-          <Link href="/#february-special" className="inline-flex min-h-11 items-center text-sm font-semibold text-primary hover:underline">
+          <Link href="/#february-special" className="hidden min-h-11 items-center text-sm font-semibold text-primary hover:underline sm:inline-flex">
             Feb Special
           </Link>
           <Link href="/bio" className="inline-flex min-h-11 items-center text-sm font-medium hover:underline">
